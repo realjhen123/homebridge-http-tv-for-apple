@@ -1,11 +1,11 @@
 import type { API, PlatformConfig, Logging, PlatformAccessory } from 'homebridge';
 import { configureTvAccessory } from './tv-accessory';
 
-const PLUGIN_NAME = 'homebridge-localtv';
-const PLATFORM_NAME = 'localtv';
+const PLUGIN_NAME = 'homebridge-http-tv-for-apple';
+const PLATFORM_NAME = 'http-tv';
 
 // ── Platform ────────────────────────────────────────────────────
-class LocaltvPlatform {
+class HttpTvPlatform {
   private readonly accessories: PlatformAccessory[] = [];
 
   constructor(
@@ -13,7 +13,7 @@ class LocaltvPlatform {
     private readonly config: PlatformConfig,
     private readonly api: API,
   ) {
-    this.log.info('Localtv Platform initializing...');
+    this.log.info('HttpTv Platform initializing...');
 
     // Wait for Homebridge to finish restoring cached accessories
     // before creating new ones to avoid duplicates
@@ -21,7 +21,7 @@ class LocaltvPlatform {
       this.log.info('Homebridge launched, setting up TV accessory...');
 
       const existing = this.accessories.find(
-        (a) => a.context?.deviceType === 'localtv',
+        (a) => a.context?.deviceType === 'http-tv',
       );
 
       if (existing) {
@@ -31,9 +31,9 @@ class LocaltvPlatform {
       }
 
       // Create a new TV accessory
-      const uuid = this.api.hap.uuid.generate('localtv-tv');
-      const accessory = new this.api.platformAccessory('Local TV', uuid);
-      accessory.context.deviceType = 'localtv';
+      const uuid = this.api.hap.uuid.generate('http-tv');
+      const accessory = new this.api.platformAccessory('HTTP TV', uuid);
+      accessory.context.deviceType = 'http-tv';
 
       configureTvAccessory(accessory, this.api.hap, this.log);
 
@@ -52,5 +52,5 @@ class LocaltvPlatform {
 
 // ── Plugin Entry ────────────────────────────────────────────────
 export default (api: API) => {
-  api.registerPlatform(PLATFORM_NAME, LocaltvPlatform);
+  api.registerPlatform(PLATFORM_NAME, HttpTvPlatform);
 };

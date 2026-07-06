@@ -11,7 +11,7 @@ iPhone Remote App
        ↓
    Homebridge
        ↓
-  本插件 (homebridge-localtv)
+  本插件 (homebridge-homebridge-http-tv-for-apple)
        ↓
    api.ts (HTTP 封装)
        ↓
@@ -23,7 +23,7 @@ iPhone Remote App
 ## 项目结构
 
 ```
-localtv/
+homebridge-http-tv-for-apple/
 ├── src/
 │   ├── api.ts          # 所有 HTTP API 调用集中管理
 │   ├── index.ts        # 插件入口，注册平台
@@ -108,8 +108,8 @@ export async function volumeDown(): Promise<void>
 {
   "platforms": [
     {
-      "platform": "localtv",
-      "name": "Local TV"
+      "platform": "homebridge-http-tv-for-apple",
+      "name": "HTTP TV"
     }
   ]
 }

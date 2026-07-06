@@ -44,8 +44,8 @@ log) {
     const { Service, Characteristic } = hap;
     // ── Television Service ────────────────────────────────────────
     const tvService = accessory.getService(Service.Television)
-        || accessory.addService(Service.Television, 'Local TV', 'tv');
-    tvService.setCharacteristic(Characteristic.ConfiguredName, 'Local TV');
+        || accessory.addService(Service.Television, 'HTTP TV', 'tv');
+    tvService.setCharacteristic(Characteristic.ConfiguredName, 'HTTP TV');
     tvService.setCharacteristic(Characteristic.SleepDiscoveryMode, Characteristic.SleepDiscoveryMode.ALWAYS_DISCOVERABLE);
     // Remote key handler: map Remote App keys to TV API calls
     tvService.getCharacteristic(Characteristic.RemoteKey)

@@ -13,9 +13,9 @@ export function configureTvAccessory(
 
   // ── Television Service ────────────────────────────────────────
   const tvService = accessory.getService(Service.Television)
-    || accessory.addService(Service.Television, 'Local TV', 'tv');
+    || accessory.addService(Service.Television, 'HTTP TV', 'tv');
 
-  tvService.setCharacteristic(Characteristic.ConfiguredName, 'Local TV');
+  tvService.setCharacteristic(Characteristic.ConfiguredName, 'HTTP TV');
   tvService.setCharacteristic(
     Characteristic.SleepDiscoveryMode,
     Characteristic.SleepDiscoveryMode.ALWAYS_DISCOVERABLE,
