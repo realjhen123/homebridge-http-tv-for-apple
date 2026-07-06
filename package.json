@@ -1,5 +1,5 @@
 {
-  "name": "homebridge-localtv",
+  "name": "homebridge-http-tv-for-apple",
   "version": "1.0.0",
   "description": "Homebridge plugin to control a TV via HTTP API using iPhone Remote App",
   "main": "dist/index.js",
