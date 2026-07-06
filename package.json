@@ -1,0 +1,26 @@
+{
+  "name": "homebridge-localtv",
+  "version": "1.0.0",
+  "description": "Homebridge plugin to control a TV via HTTP API using iPhone Remote App",
+  "main": "dist/index.js",
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "engines": {
+    "homebridge": ">=1.6.0",
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"No tests yet\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "homebridge": "^1.6.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "homebridge": "^1.6.0"
+  }
+}
