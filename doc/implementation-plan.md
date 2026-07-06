@@ -11,7 +11,7 @@ iPhone Remote App
        ↓
    Homebridge
        ↓
-  本插件 (homebridge-homebridge-http-tv-for-apple)
+  本插件 (homebridge-http-tv-for-apple)
        ↓
    api.ts (HTTP 封装)
        ↓
@@ -108,7 +108,7 @@ export async function volumeDown(): Promise<void>
 {
   "platforms": [
     {
-      "platform": "homebridge-http-tv-for-apple",
+      "platform": "http-tv-for-apple",
       "name": "HTTP TV"
     }
   ]

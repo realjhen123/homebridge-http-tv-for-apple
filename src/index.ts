@@ -21,7 +21,7 @@ class HttpTvPlatform {
       this.log.info('Homebridge launched, setting up TV accessory...');
 
       const existing = this.accessories.find(
-        (a) => a.context?.deviceType === 'http-tv',
+        (a) => a.context?.deviceType === 'http-tv-for-apple',
       );
 
       if (existing) {
@@ -31,9 +31,9 @@ class HttpTvPlatform {
       }
 
       // Create a new TV accessory
-      const uuid = this.api.hap.uuid.generate('http-tv');
+      const uuid = this.api.hap.uuid.generate('http-tv-for-apple');
       const accessory = new this.api.platformAccessory('HTTP TV', uuid);
-      accessory.context.deviceType = 'http-tv';
+      accessory.context.deviceType = 'http-tv-for-apple';
 
       configureTvAccessory(accessory, this.api.hap, this.log);
 
