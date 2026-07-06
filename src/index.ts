@@ -2,7 +2,7 @@ import type { API, PlatformConfig, Logging, PlatformAccessory } from 'homebridge
 import { configureTvAccessory } from './tv-accessory';
 
 const PLUGIN_NAME = 'homebridge-http-tv-for-apple';
-const PLATFORM_NAME = 'http-tv';
+const PLATFORM_NAME = 'http-tv-for-apple';
 
 // ── Platform ────────────────────────────────────────────────────
 class HttpTvPlatform {
